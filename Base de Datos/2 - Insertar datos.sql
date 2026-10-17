@@ -24,6 +24,14 @@ INSERT INTO proveedores (nombre, telefono, email, domicilio) VALUES
 	('Red Globo', 2612754125, 'redglobo@gmail.com', 'San Martin 2675 - Las Heras'), 
 	('La Piramide', 2613547865, 'lapiramide@gmail.com', 'Independencia 265 - Las Heras');
 
-/*Cargar compras, seguir desde aqui*/
+/*Cargar compras 16/10 */
+INSERT INTO compras (fecha, total, id_proveedor) VALUES
+	('26-10-09', 1126000, 1),
+    ('26-10-10', 420000, 2),
+    ('26-10-10', 32700, 4),
+    ('26-10-11', 41500, 3);
+/*Cargar detalle de compra, luego de cargar compras */    
+INSERT INTO detalle_compra (id_compra, id_insumo, cantidad, precio_unitario) VALUES
+	();
 select * from compras
     
