@@ -116,3 +116,9 @@ CREATE TABLE elaboracion(
         ON DELETE CASCADE 
         ON UPDATE CASCADE
     );
+CREATE TABLE usuarios(
+	id_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(30) NOT NULL,
+    contrasenia VARCHAR(20) NOT NULL,
+    rol VARCHAR(20) NOT NULL
+);
