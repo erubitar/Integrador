@@ -98,6 +98,13 @@ INSERT INTO clientes (nombre, telefono, email) VALUES
 ('Lucas Rodríguez', '+54 9 351 234-5678', 'lucas.rodriguez@email.com'),
 ('Sofia López', '+54 9 11 9876-5432', 'sofia.lopez@email.com'),
 ('Carlos Gómez', '+54 9 261 876-5432', 'carlos.gomez@email.com');
-select * from clientes;
-select * from productos;
+/*Carga de usuarios 19/10 */
+INSERT INTO usuarios (email, contrasenia, rol) VALUES
+	('mrodrigo@tapitas.com', 'muysegura', 'admin'),
+    ('lbarrera@tapitas.com', 'masomenos', 'compras'),
+    ('mpacifico@tapitas.com', 'regular', 'ventas'),
+    ('ebitar@tapitas.com', 'insegura', 'elaboracion');
+
+select * from usuarios;
+select * from recetas;
     
