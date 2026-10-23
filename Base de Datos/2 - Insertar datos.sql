@@ -1,8 +1,7 @@
 /*Usado el 09/10*/
-INSERT INTO productos (nombre, precio, stock, activo) VALUES
-	('Disco Empanadas Criolla 13 cm', 1500, 250, 1);
 INSERT INTO productos (nombre, precio, stock) VALUES
-	('Disco Empanadas Criolla 11 cm', 1350, 100),
+	('Disco Empanadas Criolla 13 cm', 1500, 250),
+    ('Disco Empanadas Criolla 11 cm', 1350, 100),
     ('Disco Empanadas Criolla 14 cm', 1650, 25),
     ('Disco Empanadas Criolla 16 cm', 2620, 10),
     ('Disco Empanadas Criolla 18 cm', 2800, 2),
@@ -34,47 +33,47 @@ INSERT INTO compras (fecha, total, id_proveedor) VALUES
 INSERT INTO detalle_compra (id_compra, id_insumo, cantidad, precio_unitario) VALUES
 	(1, 1, 50, 21500 ),
     (1, 2, 3, 17000 ),
-    (1, 3, 2, 210000 ),
-    (1, 4, 3, 10900 ),
-    (1, 5, 8, 8300 );
-/*Carga de recetas 18/10 */
+    (2, 3, 2, 210000 ),
+    (3, 4, 3, 10900 ),
+    (4, 5, 5, 8300 );
+/*Carga de recetas 18/10. Actualizado 23/10: cantidades por paquete de una docena
+  (cantidad de la tanda / docenas que rinde la tanda) */
 INSERT INTO recetas (id_producto, id_insumo, cantidad_elaboracion) VALUES
-	(1, 1, 25),
-    (1, 2, 1),
-    (1, 3, 0.5),
-    (1, 4, 0.45),
-    (1, 5, 0.15),
-    (2, 1, 25),
-    (2, 2, 1),
-    (2, 3, 0.5),
-    (2, 4, 0.45),
-    (2, 5, 0.11),
-    (3, 1, 25),
-    (3, 2, 1),
-    (3, 3, 0.5),
-    (3, 4, 0.45),
-    (3, 5, 0.15),
-    (4, 1, 25),
-    (4, 2, 1),
-    (4, 3, 0.5),
-    (4, 4, 0.45),
-    (4, 5, 0.14),
-    (5, 1, 25),
-    (5, 2, 1),
-    (5, 3, 0.5),
-    (5, 4, 0.45),
-    (5, 5, 0.11),
-    (6, 1, 25),
-    (6, 2, 1),
-    (6, 3, 0.5),
-    (6, 4, 0.45),
-    (6, 5, 0.5);
-INSERT INTO recetas (id_producto, id_insumo, cantidad_elaboracion) VALUES
-	(7, 1, 25),
-    (7, 2, 1),
-    (7, 3, 0.5),
-    (7, 4, 0.45),
-    (7, 5, 0.12);
+	(1, 1, 25 / 60), /* 13 cm: una tanda rinde 60 docenas */
+    (1, 2, 1 / 60),
+    (1, 3, 0.5 / 60),
+    (1, 4, 0.45 / 60),
+    (1, 5, 0.15 / 60),
+    (2, 1, 25 / 70), /* 11 cm: una tanda rinde 70 docenas */
+    (2, 2, 1 / 70),
+    (2, 3, 0.5 / 70),
+    (2, 4, 0.45 / 70),
+    (2, 5, 0.11 / 70),
+    (3, 1, 25 / 50), /* 14 cm: una tanda rinde 50 docenas */
+    (3, 2, 1 / 50),
+    (3, 3, 0.5 / 50),
+    (3, 4, 0.45 / 50),
+    (3, 5, 0.15 / 50),
+    (4, 1, 25 / 35), /* 16 cm: una tanda rinde 35 docenas */
+    (4, 2, 1 / 35),
+    (4, 3, 0.5 / 35),
+    (4, 4, 0.45 / 35),
+    (4, 5, 0.14 / 35),
+    (5, 1, 25 / 30), /* 18 cm: una tanda rinde 30 docenas */
+    (5, 2, 1 / 30),
+    (5, 3, 0.5 / 30),
+    (5, 4, 0.45 / 30),
+    (5, 5, 0.11 / 30),
+    (6, 1, 25 / 25), /* 22 cm: una tanda rinde 25 docenas */
+    (6, 2, 1 / 25),
+    (6, 3, 0.5 / 25),
+    (6, 4, 0.45 / 25),
+    (6, 5, 0.15 / 25),
+    (7, 1, 25 / 24), /* Pascualina: una tanda rinde 24 docenas */
+    (7, 2, 1 / 24),
+    (7, 3, 0.5 / 24),
+    (7, 4, 0.45 / 24),
+    (7, 5, 0.12 / 24);
 /*Carga de Elaboracion 18/10 */
 INSERT INTO elaboracion (fecha, cantidad_producida, id_producto) VALUES
 	('26-10-12', 100, 1),
@@ -99,7 +98,7 @@ INSERT INTO clientes (nombre, telefono, email) VALUES
 ('Sofia López', '+54 9 11 9876-5432', 'sofia.lopez@email.com'),
 ('Carlos Gómez', '+54 9 261 876-5432', 'carlos.gomez@email.com');
 /*Carga de usuarios 19/10 */
-INSERT INTO usuarios (email, contrasenia, rol) VALUES
+INSERT INTO usuarios (email, password, rol) VALUES
 	('mrodrigo@tapitas.com', 'muysegura', 'admin'),
     ('lbarrera@tapitas.com', 'masomenos', 'compras'),
     ('mpacifico@tapitas.com', 'regular', 'ventas'),

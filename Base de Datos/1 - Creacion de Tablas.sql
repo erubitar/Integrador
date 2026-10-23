@@ -21,7 +21,8 @@ CREATE TABLE productos(
 	id_producto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50),
     precio DECIMAL(10,2),
-    stock INT
+    stock INT,
+    activo BOOLEAN NOT NULL DEFAULT 1
 );
 CREATE TABLE ventas(
 	id_venta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -88,7 +89,7 @@ CREATE TABLE detalle_compra(
 CREATE TABLE recetas (
     id_producto INT NOT NULL,
     id_insumo INT NOT NULL,
-    cantidad_elaboracion DECIMAL(10, 2) NOT NULL,
+    cantidad_elaboracion DECIMAL(10, 4) NOT NULL,
     
     PRIMARY KEY (id_producto, id_insumo),
     
@@ -119,6 +120,6 @@ CREATE TABLE elaboracion(
 CREATE TABLE usuarios(
 	id_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(30) NOT NULL,
-    contrasenia VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL,
     rol VARCHAR(20) NOT NULL
 );

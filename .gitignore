@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+
+# Documentación en PDF (no se sube al repositorio)
+Documentacion/
